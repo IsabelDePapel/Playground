@@ -1,3 +1,6 @@
-import { printDateTimes } from "./src/playground";
+const bunyan = require('bunyan');
+const logger = bunyan.createLogger({ name: 'isabel_test'});
 
-printDateTimes();
+const playground = require('./playground');
+
+playground.printDateTimes(logger);

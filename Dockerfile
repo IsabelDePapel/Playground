@@ -10,6 +10,6 @@ RUN npm install && npm cache clean --force
 ENV TINI_VERSION v0.18.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/local/bin/tini
 RUN chmod +x /usr/local/bin/tini
-ENTRYPOINT ["/tini", "--"]
+ENTRYPOINT ["tini", "--"]
 
-CMD ["/usr/local/bin/node", "/.src/app.js"]
+CMD ["/usr/local/bin/node", "./src/app.js"]
